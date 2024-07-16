@@ -1,26 +1,8 @@
-# This repo has moved to [ChatGPTBox](https://github.com/josStorer/chatGPTBox). Due to the upstream repo being acquired and closed source, and there has been a period of time where issues and PRs in the upstream have gone unhandled. I decided to publish this extension to the store and keep open-source
-
-[![Verify search engine configs](https://github.com/josStorer/chatGPT-search-engine-extension/workflows/verify-configs/badge.svg)](https://github.com/josStorer/chatGPT-search-engine-extension/actions/workflows/verify-configs.yml)
-[![GitHub release](https://img.shields.io/github/release/josStorer/chatGPT-search-engine-extension.svg)](https://github.com/josStorer/chatGPT-search-engine-extension/releases/latest)
-
-[Installation](#installation)
-
 A browser extension to display ChatGPT response alongside Search Engine results, supports Chrome/Edge/Firefox/Safari(macOS) and
 Android.
 
 Support most search engines, including Google, Bing, Yahoo, DuckDuckGo, StartPage, Baidu, Kagi, Yandex, Naver, Brave,
 Searx, Ecosia, Neeva in total.
-
-Request more search engine support in [#6](https://github.com/josStorer/chatGPT-search-engine-extension/issues/6)
-
-See more in [Releases](https://github.com/josStorer/chatGPT-search-engine-extension/releases)
-and [Pre-release build](https://github.com/josStorer/chatGPT-search-engine-extension/actions/workflows/pre-release-build.yml)
-
-## Notice
-
-This repository exists only to support some features that are not supported or denied
-in [upstream](https://github.com/wong2/chat-gpt-google-extension), and for ethical reasons, I have not uploaded it to
-any app store. It isn't related to any extensions of the same name that may exist in some app store
 
 ## Diff with upstream
 
@@ -32,18 +14,14 @@ any app store. It isn't related to any extensions of the same name that may exis
 - Safari(macOS) support
 - Custom mount point (e.g. for some unsupported engines)
 - Preview your setting (e.g. theme, mount point) in realtime
-- Katex: [upstream#75](https://github.com/wong2/chat-gpt-google-extension/pull/75)
 - Linkify in ReactMarkdown
-- Interactive mode: [upstream#103](https://github.com/wong2/chat-gpt-google-extension/pull/103), now support generating
   separate sessions for each page
 - Fix answer being overwritten due to "network error" or other errors
-- Theme switcher: [#9](https://github.com/josStorer/chatGPT-search-engine-extension/pull/9)
 - Collapse answers
 - Popup Setting Window (Upstream has switched to a standalone options page)
 - Allow `Insert chatGPT at the top of search results` in Setting Window
 - Switch to webpack
 - Javascript
-- See more in [Releases](https://github.com/josStorer/chatGPT-search-engine-extension/releases)
 
 </details>
 
@@ -86,50 +64,6 @@ scenario or related need, please create an issue)
 - Android
   ![android](screenshot/android.jpg)
 
-## Installation
-
-### Install to Chrome/Edge
-
-1. Download `chromium.zip` from [Releases](https://github.com/josStorer/chatGPT-search-engine-extension/releases).
-2. Unzip the file.
-3. In Chrome/Edge go to the extensions page (`chrome://extensions` or `edge://extensions`).
-4. Enable Developer Mode.
-5. Drag the unzipped folder anywhere on the page to import it (do not delete the folder afterwards).
-
-### Install to Firefox
-
-1. Download `firefox.zip` from [Releases](https://github.com/josStorer/chatGPT-search-engine-extension/releases).
-2. Unzip the file.
-3. Go to `about:debugging`, click "This Firefox" on the sidebar.
-4. Click "Load Temporary Add-on" button, then select any file in the unzipped folder.
-
-### Install to Android
-
-1. Install [Kiwi Browser](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser) or other mobile browsers that support installing extensions from local files.
-2. Download `chromium.zip` from [Releases](https://github.com/josStorer/chatGPT-search-engine-extension/releases) on
-   your phone.
-3. Go to `Extensions` and enable developer mode.
-4. Click `+ (from .zip/.crx/.user.js)` button and load the downloaded zip file.
-5. Click the browser option button, scroll down and click on the extension icon to open the setting window.
-6. Enable `Insert chatGPT at the top of search results`.
-
-### Install to Safari(macOS)
-
-1. Download `safari.dmg` from [Releases](https://github.com/josStorer/chatGPT-search-engine-extension/releases).
-2. Double-click `safari.dmg` to open it and drag the extension’s icon to your Applications folder
-3. Run this extension in your Applications folder
-4. Click `Quit and Open Safari Settings...`
-5. Click `Advanced` in Safari Settings and then turn on `Show Develop menu in menu bar`
-6. Click `Develop` in Safari menu bar and then turn on `Allow Unsigned Extensions`
-7. You will see this extension in Extensions of Safari Settings, turn on it
-8. Click `Always Allow on Every Website`
-
-## Enable for single website
-
-1. Click on the extension icon to open the popup setting window.
-2. Click `Advanced`.
-3. Input the website name (of the hostname) in `Custom Site Regex`, e.g. google
-4. Enable `Only use Custom Site Regex...`
 
 ## Build from source
 
@@ -137,31 +71,3 @@ scenario or related need, please create an issue)
 2. Install dependencies with `npm install`
 3. `npm run build`
 4. Load `build/chromium/` or `build/firefox/` directory to your browser
-
-## My contributions
-
-- [Pull Requests](https://github.com/wong2/chat-gpt-google-extension/pulls?q=is%3Apr+author%3AjosStorer+)
-- ### Other
-    - Merge and improve some PRs
-    - Support for most search engines
-    - Android support
-    - Safari(macOS) support
-    - Custom mount point
-    - Preview your setting in realtime
-    - Fix answer being overwritten due to "network error" or other errors
-    - Linkify in ReactMarkdown
-    - Generate separate sessions for each page
-    - Code highlight
-    - Collapse answers
-    - Copy answers
-    - Allow insert chatGPT at the top of search results
-    - Automated build workflow (with esbuild/webpack)
-    - Verify search engine configs automatically
-    - See more in [Releases](https://github.com/josStorer/chatGPT-search-engine-extension/releases)
-
-## Credit
-
-This project is forked from [wong2/chat-gpt-google-extension](https://github.com/wong2/chat-gpt-google-extension) and
-detached since 14 December of 2022
-
-The original repository is inspired by [ZohaibAhmed/ChatGPT-Google](https://github.com/ZohaibAhmed/ChatGPT-Google) ([upstream-c54528b](https://github.com/wong2/chatgpt-google-extension/commit/c54528b0e13058ab78bfb433c92603db017d1b6b))
